@@ -56,6 +56,12 @@ model.fit(train_df['text'], train_df['language'])
 # Predict
 preds = model.predict(test_df['text'])
 
+print(test_df['language'])
 # Accuracy
 acc = accuracy_score(test_df['language'], preds)
 print("Test accuracy:", acc)
+
+# test
+new_preds = model.predict(["Bonjour, comment ça va?"])
+new_acc = accuracy_score(test_df['language'], new_preds)
+print("Test accuracy:", new_acc)
